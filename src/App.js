@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 
+//dummy data
 const DUMMY_EXPENSES = [
   {
     id: 'e1',
@@ -28,19 +29,13 @@ const DUMMY_EXPENSES = [
 function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
+  //function to add expense
   function addExpenseHandler(expense) {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses]
-
     });
-    // console.log('In App.js');
-    // console.log(expense);
   };
 
-  // imperative approach
-  // const para = document.createElement('p');
-  // para.textContent = "This is also visible";
-  // document.getElementById('root').append(para);
 
   return (
     <div>
@@ -51,3 +46,10 @@ function App() {
 }
 
 export default App;
+
+
+
+  // imperative approach
+  // const para = document.createElement('p');
+  // para.textContent = "This is also visible";
+  // document.getElementById('root').append(para);
